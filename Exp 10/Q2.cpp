@@ -1,25 +1,24 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-template<class T>
-T square(T x){
-    T sum = 0;
-    sum = x * x;
-    return sum;
+template <class T>
+T square(T num) {
+    return num * num;
 }
 
-template<>
-string square<string>(string ss){
-    return (ss + ss);
+
+template <>
+string square<string>(string str) {
+    return str + str;  
 }
 
-int main(){
-    int i = 2, ii;
-    string ww = "MIT";
-    ii = square<int>(i);
+int main() {
+    int i = 5;
+    string s = "Hello";
 
-    cout << "Square of 2 is: " << ii << endl;
-    cout << "Square of given string is: " << square<string>(ww) << endl;
+    cout << "Square of integer " << i << " = " << square(i) << endl;
+    cout << "Square of string \"" << s << "\" = " << square(s) << endl;
 
     return 0;
 }
+
